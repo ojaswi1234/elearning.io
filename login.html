@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to an external CSS file for styles -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, rgba(123, 41, 185, 0.8), rgba(109, 243, 250, 0.8));
+            background-size: cover;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            padding: 12px;
+            margin-top: 8px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .password-toggle {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .login{
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .login:hover {
+            background-color: #45a049;
+        }
+
+        .g-signin2 {
+            margin-top: 20px;
+        }
+
+        .g-signin2 > div {
+            width: 100%;
+            text-align: center;
+        }
+        .register{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <div style="position: relative;">
+                <input type="password" id="password" name="password" required>
+                <span class="password-toggle" onclick="togglePasswordVisibility()">Show Password</span>
+            </div>
+
+            <a href="Website on online education.html" class="login">Login</a>
+            <p >Don't have an account?<a href="register.html" class="register">Create an Account</a></p>
+        </form>
+
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+        <script>
+
+            function togglePasswordVisibility() {
+                var passwordInput = document.getElementById("password");
+                var passwordToggle = document.querySelector(".password-toggle");
+
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    passwordToggle.textContent = "Hide Password";
+                } else {
+                    passwordInput.type = "password";
+                    passwordToggle.textContent = "Show Password";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, rgba(123, 41, 185, 0.8), rgba(109, 243, 250, 0.8));
+            background-size: cover;
+            background-blend-mode: overlay;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            padding: 12px;
+            margin-top: 8px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .password-toggle {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .social-login {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .social-login button {
+            flex: 1;
+            margin: 0 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-login button.google {
+            background-color: #DD4B39;
+            color: #fff;
+        }
+
+        .social-login button.facebook {
+            background-color: #3B5998;
+            color: #fff;
+        }
+
+        .social-login button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Register</h2>
+        </header>
+        <form action="register_process.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <div style="position: relative;">
+                <input type="password" id="password" name="password" required>
+                <span class="password-toggle" onclick="togglePasswordVisibility()">Show Password</span>
+            </div>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="social-login">
+            <button class="google">Login with Google</button>
+            <button class="facebook">Login with Facebook</button>
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var passwordToggle = document.querySelector(".password-toggle");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passwordToggle.textContent = "Hide Password";
+            } else {
+                passwordInput.type = "password";
+                passwordToggle.textContent = "Show Password";
+            }
+        }
+    </script>
+</body>
+</html>

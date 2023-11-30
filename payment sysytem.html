@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: rgba(244, 244, 244) url('https://th.bing.com/th/id/OIG.5wUX7fqmOFQDlGWLRvof?pid=ImgGn') center/cover no-repeat; /* Opacity with rgba */
+            background-size: cover;
+        }
+
+        header {
+            background-color: #008080; /* Dark Cyan */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #333; /* Set border color to match text color */
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            background-color: #333; /* Dark Gray */
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: #245e4974; /* Slightly darker gray on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Payment System</h1>
+    </header>
+
+    <section>
+        <h2>Payment Details</h2>
+        <form>
+            <label for="paymentMethod">Select Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="creditCard">Credit Card</option>
+                <option value="debitCard">Debit Card</option>
+                <option value="upi">UPI</option>
+                <option value="phonePe">PhonePe</option>
+                <option value="paytm">Paytm</option>
+            </select>
+            <a href="payment system2.html">Make Payment</a>
+        </form>
+    </section>
+
+    <section>
+        <h2>Billing Information</h2>
+        <form>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <button type="submit">Submit Billing Information</button>
+        </form>
+    </section>
+</body>
+</html>

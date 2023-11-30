@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Classroom</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, rgba(123, 41, 185, 0.8), rgba(109, 243, 250, 0.8));
+            background-size: cover;
+            background-blend-mode: overlay;
+            color: #333;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://th.bing.com/th/id/OIG.Dy52TXpVX4tNsAtkTvV4?pid=ImgGn');
+            background-size: auto;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        header {
+            background-color: rgb(6, 6, 6);
+            color: rgb(60, 170, 221);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: rgb(85, 41, 156);
+            color: #ecf0f1;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: font-size 0.3s ease, color 0.3s ease, text-decoration 0.3s ease, text-transform 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(60, 170, 221);
+        }
+
+        nav a:hover {
+            font-size: 18px;
+            color: black;
+            text-transform: capitalize;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+            border: 1px outset #333;
+            border-radius: 10%;
+            background: linear-gradient(to right, rgba(109, 243, 250, 0.8), rgba(123, 41, 185, 0.8));
+            transform: skew(20deg);
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .main {
+            float: left;
+            width: 70%;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .sub-heading {
+            float: left;
+            width: 100%;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .sidebar {
+            float: left;
+            width: 30%;
+            color: #333;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 5%;
+            animation: fadeInRight 1s ease-in-out;
+        }
+
+        .home-details-sub-heading {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .sidebar2 {
+            float: right;
+            border-radius: 50%;
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 55px;
+            animation: fadeInLeft 1s ease-in-out;
+        }
+
+        <!-- @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        } -->
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .upcoming {
+            font-size: 18px;
+            margin: 5px 0 0 0;
+            color: red;
+            text-transform: capitalize;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+            border-radius: 30%;
+        }
+
+        .typing-animation::after {
+            content: "Welcome to Our Virtual classroom";
+            animation: cursorBlink 1s infinite;
+            color: azure;
+        }
+
+        @keyframes cursorBlink {
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .follow-us {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .social-icons img {
+            width: 40px;
+        }
+
+        .future-webinars {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .future-webinars a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ecf0f1;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .future-webinars a:hover {
+            background-color: #333;
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="typing-animation" id="welcome-heading"></h1>
+        <p>Empowering Education Online</p>
+    </header>
+
+    <nav>
+        <a href="Website on online education.html">Home</a>
+        <a href="home.html">Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html" class="login">Login</a>
+        <a href="register.html" class="register">Register Now</a>
+    </nav>
+
+    <div class="container">
+        <section class="main">
+            <h2 style="color: black">Welcome to our Virtual Classroom</h2>
+            <p>Explore a new way of learning with our interactive online courses.</p>
+        </section>
+
+        <section class="sub-heading">
+            <h3 style="color: black">What is our Website all about?</h3>
+            <p class="home-details-sub-heading">
+                Our Virtual Classroom is designed to provide a dynamic and engaging learning environment for students of all levels. Whether you are a professional looking to enhance your skills or a student seeking supplementary education, our platform offers a diverse range of courses to meet your needs.
+            </p>
+            <p>Key Features:</p>
+            <ul>
+                <li>Interactive Learning: Immerse yourself in interactive lessons that go beyond traditional teaching methods.</li>
+                <li>Expert Instructors: Learn from industry experts and experienced educators who are passionate about sharing their knowledge.</li>
+                <li>Flexible Schedule: Access courses at your own pace, fitting your education around your busy life.</li>
+                <li>Varied Courses: From technology and development to arts and sciences, our platform offers a wide array of courses to cater to different interests.</li>
+            </ul>
+            <p>Join us on a journey of knowledge and skill development. Embrace the future of education with our Virtual Classroom.</p>
+        </section>
+
+        <aside class="sidebar">
+            <h2 style="color: black">Upcoming Courses</h2>
+            <ul class="upcoming">
+                <li><a href="course 3.html">Penetration testing</a></li>
+                <li><a href="course 2.html">Full Stack Web Development</a></li>
+                <li><a href="course 1.html">Data Mining</a></li>
+            </ul>
+        </aside>
+    </div>
+    <section>
+    <div class="future-webinars">
+        <h2>Explore our Future Webinars</h2>
+        <a href="webinars.html">View Future Webinars</a>
+    </div>
+</section>
+    <section class="follow-us">
+        <h2 style="color: black;">Follow Us</h2>
+        <p>Stay connected with us on social media for updates and announcements.</p>
+
+        <div class="social-icons">
+            <a href="https://github.com/ojaswi1234" target="_blank" title="Follow us on GitHub"><img
+                    src="https://pngimg.com/d/github_PNG58.png" alt="GitHub"></a>
+            <a href="www.linkedin.com/in/ojaswi-bhardwaj-962393281" target="_blank"
+                title="Follow us on LinkedIn"><img
+                    src="https://static.vecteezy.com/system/resources/previews/018/930/587/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"
+                    alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/ojaswi3690/" target="_blank" title="Follow us on Instagram"><img
+                    src="https://static.vecteezy.com/system/resources/previews/023/986/555/non_2x/instagram-logo-instagram-logo-transparent-instagram-icon-transparent-free-free-png.png"
+                    alt="Instagram"></a>
+        </div>
+    </section>
+</body>
+
+</html>

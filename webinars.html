@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=500, initial-scale=1" />
+    <title>Upcoming Webinars</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #29b97b, #faa16d);
+            color: #333;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        .webinars {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 25px;
+        }
+
+        .webinar {
+            width: 30%;
+            margin-bottom: 20px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .webinar:hover {
+            transform: translateY(-5px);
+        }
+
+        .webinar img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .webinar a {
+            color: white;
+            padding: 5px;
+            width: 70%;
+            border: 1px;
+            border-radius: 10px;
+            text-decoration: none;
+            background-color: navy;
+        }
+
+        .webinar .fee {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upcoming Webinars.....</h1>
+        <section class="webinars">
+            <div class="webinar">
+                <h4>Webinar 1: Introduction to Ethical Hacking</h4>
+                <p>Join us for an introductory webinar on ethical hacking. Learn the basics of ethical hacking, its importance, and how it can contribute to cybersecurity.</p>
+                <p class="fee">Registration Fee: ₹500</p>
+                <a href="web 1.html" onclick="showAlert()">Register Now</a>
+            </div>
+            <div class="webinar">
+                <h4>Webinar 2: Remote Sensing Applications</h4>
+                <p>Explore the applications of remote sensing in various fields. Learn how remote sensing technology is used for environmental monitoring, agriculture, and more.</p>
+                <p class="fee">Registration Fee: ₹400</p>
+                <a href="web 2.html" onclick="showAlert()">Register Now</a>
+            </div>
+            <div class="webinar">
+                <h4>Webinar 3: Effective Communication Skills</h4>
+                <p>Enhance your communication skills in this webinar. Learn techniques to improve verbal and written communication for personal and professional success.</p>
+                <p class="fee">Registration Fee: ₹300</p>
+                <a href="web 3.html" onclick="showAlert()">Register Now</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
